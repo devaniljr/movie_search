@@ -154,6 +154,8 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.17.0)
+    mock_redis (0.35.0)
+      ruby2_keywords
     msgpack (1.6.0)
     multi_json (1.15.0)
     multipart-post (2.2.3)
@@ -283,6 +285,7 @@ DEPENDENCIES
   faker
   importmap-rails
   jbuilder
+  mock_redis
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.1)
