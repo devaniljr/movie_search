@@ -2,6 +2,6 @@ class CleanUpCacheJob
   include Sidekiq::Job
 
   def perform(*args)
-    # Do something
+    TreatSearchService.call
   end
 end
