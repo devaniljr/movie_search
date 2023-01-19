@@ -22,4 +22,16 @@ describe Search, type: :model do
         expect(Search.most_searched).to eq({ "Batman" => 2, "Superman" => 1 })
       end
     end
+
+    describe '.trending' do
+      before do
+        Search.create(title: 'Batman', created_at: 8.days.ago)
+        Search.create(title: 'Batman')
+        Search.create(title: 'Superman')
+      end
+
+      it 'returns the trending titles within the given range' do
+        expect(Search.trending(7)).to eq({ "Batman" => 1, "Superman" => 1 })
+      end
+    end
 end
