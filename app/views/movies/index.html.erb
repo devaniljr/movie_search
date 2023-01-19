@@ -1,0 +1,32 @@
+<div class="bg-[#F7F7F7]">
+    <div class="container mx-auto pt-28 px-5 ">
+        <div class="flex justify-center pb-5">
+            <%= image_tag("/img/logo.png", alt: "Movie Search" )%>
+        </div>
+
+        <div class="flex justify-center">
+            <%= form_with(url: movies_path, method: :get,
+                        data: { controller: "search-form", turbo_frame: "movies" },
+                        html: { autocomplete: "off" },
+                        class: "w-full flex justify-center") do |f| %>
+                <%= f.text_field :query, class: "py-5 px-4 text-xl md:text-3xl rounded border w-full md:w-3/4 lg:w-2/5 self-center focus:border-transparent focus:ring-1 border-gray-300 ring-gray-100 focus:ring-gray-600 shadow", placeholder: "Search the title of a movie...", data: { action: "input->search-form#search" } %>
+
+                <%= button_tag(type: 'submit', class: "py-3 px-3 -ml-14 font-medium text-neutral-900 rounded inline-flex items-center cursor-pointer") do %>
+                    <i class='fa-solid fa-magnifying-glass fa-xl text-[#E8676B] hover:opacity-50 transition-all'></i>
+                <% end %>
+            <% end %>
+        </div>
+
+        <div class="flex justify-center">
+            <%= turbo_frame_tag "movies", class: "grid grid-cols-2 md:grid-cols-4 my-6 lg:w-2/3" do %>
+                <%= render @movies %>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+<div class="overflow-x-hidden bg-[#F7F7F7] -mt-20">
+  <div class="mt-[100px] ml-[-50%] h-[500px] w-[200%] rounded-t-[100%] bg-[#E8676B]">
+    <div class="pt-20 text-center text-2xl text-white">Footer</div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<% 
+  random_image = ['/img/movie_poster_1.png', '/img/movie_poster_2.png',
+                  '/img/movie_poster_3.png', '/img/movie_poster_4.png',
+                  '/img/movie_poster_5.png', '/img/movie_poster_6.png',
+                  '/img/movie_poster_7.png']
+%>
+
+<div id="<%= dom_id movie %>" class="relative overflow-hidden">
+  <%= link_to movie_path(movie) do %>
+    <%= image_tag("#{random_image.sample}", alt: "Random movie poster", class: "w-full object-cover") %>
+    <div class="absolute inset-0 bg-slate-900 bg-opacity-50 hover:bg-opacity-20 flex items-end justify-center pb-4 transition-all">
+      <h2 class="text-xl font-medium text-white px-2">
+        <%= movie.title %>
+      </h2>
+    </div>
+  <% end %>
+</div>
+
