@@ -31,6 +31,18 @@ RSpec.describe MoviesController, type: :request do
         expect(response.body).to include(movie3.title)
         expect(response.body).to include(movie4.title)      
       end
+
+      it "session[:search_id] is set correctly" do
+        movie1 = create(:movie, title: "Superman")
+        movie2 = create(:movie, title: "Batman")
+        movie3 = create(:movie, title: "Wonder Woman")
+        movie4 = create(:movie, title: "Aquaman")
+
+        get "/movies"
+
+        expect(response).to have_http_status(200)
+        expect(session[:search_id]).to be_present
+      end
     end
   end
 end
