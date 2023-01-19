@@ -1,0 +1,3 @@
+cleanup_job:
+   cron: "*/5 * * * *"
+   class: "CleanUpCacheJob"
