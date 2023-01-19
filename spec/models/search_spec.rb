@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Search, type: :model do
+describe Search, type: :model do
     describe 'associations' do
         it 'belongs to a movie' do
           movie = create(:movie)
@@ -9,5 +9,17 @@ RSpec.describe Search, type: :model do
 
           expect(search.movie).to be(movie)
         end
+    end
+
+    describe '.most_searched' do
+      before do
+        Search.create(title: 'Batman')
+        Search.create(title: 'Batman')
+        Search.create(title: 'Superman')
+      end
+
+      it 'returns the most searched titles' do
+        expect(Search.most_searched).to eq({ "Batman" => 2, "Superman" => 1 })
+      end
     end
 end
