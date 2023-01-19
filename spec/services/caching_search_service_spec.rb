@@ -5,13 +5,9 @@ describe CachingSearchService do
     let(:id) { 123 }
     let(:query) { "some query" }
     let(:result) { "some result" }
-    let(:redis) { MockRedis.new }
-    let(:time) { Time.now.to_s }
+    let!(:redis) { Redis.new }
+    let(:time) { Time.now }
 
-    before do
-      allow(Redis).to receive(:new).and_return(redis)
-    end
-  
     it "sets the query, result, and time in Redis" do
       service = CachingSearchService.new(id, query, result)
       service.call

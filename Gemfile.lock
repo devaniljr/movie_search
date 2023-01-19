@@ -107,6 +107,8 @@ GEM
       railties (>= 5.0.0)
     faker (3.1.0)
       i18n (>= 1.8.11, < 2)
+    fakeredis (0.8.0)
+      redis (~> 4.1)
     faraday (1.10.3)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -136,6 +138,9 @@ GEM
     globalid (1.0.1)
       activesupport (>= 5.0)
     hashie (5.0.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.5)
@@ -160,10 +165,9 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.2)
     minitest (5.17.0)
-    mock_redis (0.35.0)
-      ruby2_keywords
     msgpack (1.6.0)
     multi_json (1.15.0)
+    multi_xml (0.6.0)
     multipart-post (2.2.3)
     net-imap (0.3.4)
       date
@@ -297,9 +301,10 @@ DEPENDENCIES
   elasticsearch (< 7.17)
   factory_bot_rails
   faker
+  fakeredis
+  httparty
   importmap-rails
   jbuilder
-  mock_redis
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.1)
