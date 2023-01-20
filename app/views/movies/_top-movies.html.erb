@@ -1,0 +1,21 @@
+<% if resource.present? %>
+  <%= turbo_frame_tag resource, class: "grid grid-cols-1 md:grid-cols-4 auto-rows-max gap-4 mt-4" do %>
+    <% resource.first(limit).each_with_index do |movie, index| %>
+      <% if find_movie(movie)%>
+          <div class="flex items-center items-stretch rounded-lg bg-red-300 text-white text-center p-4">
+            <div class="h-full rounded-full h-10 w-10 mr-4 md:max-h-20">
+              <span class="text-5xl font-medium self-center"> <%= index + 1 %> </span>
+            </div>
+            <%= link_to movie[0], movie_path(find_movie(movie)), class:"text-xl font-medium self-center" %>
+          </div>
+      <% else %>
+        <div class="flex items-center rounded-lg bg-red-300 text-white text-center p-4">
+          <div class="rounded-full h-10 w-10 mr-4">
+            <span class="text-5xl font-medium self-center"> <%= index + 1 %> </span>
+          </div>
+          <span class="text-xl font-medium"> <%= movie[0] %> </span>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>

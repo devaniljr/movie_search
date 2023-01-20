@@ -1,0 +1,17 @@
+<div class="bg-[#F7F7F7]">
+    <div class="container mx-auto py-14 px-5 ">
+        <div class="flex justify-center pb-5">
+            <%= link_to(image_tag("/img/logo.png", alt: "Movie Search" ), root_path) %>
+        </div>
+
+            <div class="relative overflow-hidden flex justify-center flex-col">
+                <%= image_tag("#{random_poster}", alt: "Random movie poster", class: "self-center") %>
+                    <div class="inset-0 flex items-end justify-center pb-4 transition-all">
+                    <h2 class="text-5xl pt-4 font-bold uppercase text-black px-2 text-center">
+                        <%= @movie.title %>
+                    </h2>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

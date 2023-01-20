@@ -45,4 +45,15 @@ RSpec.describe MoviesController, type: :request do
       end
     end
   end
+  
+  describe "GET #show" do
+    it "assigns the requested movie to @movie" do
+      movie = create(:movie)
+
+      get "/movies/#{movie.id}"
+
+      expect(response).to have_http_status(200)
+      expect(response.body).to include(movie.title)
+    end
+  end
 end

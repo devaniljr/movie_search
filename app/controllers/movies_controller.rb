@@ -13,6 +13,13 @@ class MoviesController < ApplicationController
         else
             @movies = Movie.all.sample(4)
         end
+
+        @trending = Search.trending(7)
+        @most_searched = Search.most_searched
+    end
+
+    def show
+        @movie = Movie.find(params[:id])
     end
 
 private

@@ -1,0 +1,17 @@
+<hr class="bg-gray-200 bg-gradient-to-r-transparent h-1 w-full opacity-25 mb-6">
+
+<div class="border-2 border-white p-2 w-fit">
+  <div class="bg-white text-center py-2">
+    <h2 class="text-3xl font-bold text-[#E8676B] uppercase px-4">Trending</h2>
+  </div>
+</div>
+
+<%= render "top-movies", resource: @trending, limit: 8 %>
+
+<div class="border-2 border-white p-2 w-fit mt-10">
+  <div class="bg-white text-center py-2">
+    <h2 class="text-3xl font-bold text-[#E8676B] uppercase px-4">Most searched</h2>
+  </div>
+</div>
+
+<%= render "top-movies", resource: @most_searched, limit: 16 %>

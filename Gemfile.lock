@@ -132,6 +132,7 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
+    foreman (0.87.2)
     fugit (1.8.0)
       et-orbi (~> 1, >= 1.2.7)
       raabro (~> 1.4)
@@ -302,6 +303,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   fakeredis
+  foreman
   httparty
   importmap-rails
   jbuilder
