@@ -16,6 +16,7 @@ class MoviesController < ApplicationController
 
         @trending = Search.trending(7)
         @most_searched = Search.most_searched
+        @redis = Redis.new
     end
 
     def show

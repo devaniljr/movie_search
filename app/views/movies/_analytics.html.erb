@@ -15,3 +15,21 @@
 </div>
 
 <%= render "top-movies", resource: @most_searched, limit: 16 %>
+
+<div class="grid grid-cols-2 gap-4 md:grid-cols-3 pt-10 justify-items-center">
+  <div class="flex flex-col">
+    <h2 class="text-5xl font-bold self-center text-white"><%= total_searches %></h2>
+    <p class="self-center text-white uppercase">searches since the launch</p>
+  </div>
+
+  <div class="flex flex-col">
+    <h2 class="text-5xl font-bold self-center text-white"><%= month_searches %></h2>
+    <p class="self-center text-white uppercase">searches this year</p>
+  </div>
+
+  <div class="flex flex-col">
+    <h2 class="text-5xl font-bold self-center text-white"><%= year_searches %></h2>
+    <p class="self-center text-white uppercase">searches this month</p>
+  </div>
+
+</div>
