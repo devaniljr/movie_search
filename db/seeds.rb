@@ -4,4 +4,3 @@ if Movie.count.zero?
   end
 end
 Movie.reindex
-Search.reindex
