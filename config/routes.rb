@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   require 'sidekiq/web'
+  require 'sidekiq/cron/web'
+  
   root "movies#index"
 
   resources :movies, only: [:index, :show]
