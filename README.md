@@ -12,6 +12,7 @@
 
 <p align="center">
   Demo: https://moviesearch.devanil.dev/
+  I wrote a blog post about this project: https://devanil.dev/movie-search-project
 </p>
 
 ## Versions
@@ -34,7 +35,7 @@ First, clone the project on your local machine:
 git clone https://github.com/devaniljr/movie_search .
 ```
 
-Install al dependencies running on the terminal inside the project folder:
+Install all dependencies running on the terminal inside the project folder:
 
 ```
 bundle
