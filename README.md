@@ -11,8 +11,8 @@
 </p>
 
 <p align="center">
-  Demo: https://moviesearch.devanil.dev/
-  I wrote a blog post about this project: https://devanil.dev/movie-search-project
+  Demo: https://moviesearch.devanil.dev/ <br />
+  I also wrote a blog post about this project: https://devanil.dev/movie-search-project
 </p>
 
 ## Versions
